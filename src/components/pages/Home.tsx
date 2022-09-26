@@ -2,8 +2,13 @@ import { FC, memo, Suspense } from "react";
 import { Typography } from "@material-ui/core";
 
 import { SwitchCountry } from "../molecules/SwitchCountry";
+import { useGetCovidData } from "../../hooks/useGetCovidData";
 
 const ResultCountsComponent = () => {
+  /** Recoilデータ有無で処理を分ける */
+  const { data } = useGetCovidData();
+  console.log(data);
+
   return (
     <>
       <p>test</p>
