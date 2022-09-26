@@ -11,13 +11,15 @@ const ResultCountsComponent = () => {
   const [country, setCountry] = useRecoilState(countryAtom);
   console.log(country);
   /** Recoilデータ有無で処理を分ける */
-  if (country === "") {
-    const { data } = useGetCovidData();
-    console.log(data);
-  } else {
-    const { data } = useGetCovidDataCountry(country);
-    console.log(data);
-  }
+  // if (country === "") {
+  //   const { data } = useGetCovidData();
+  //   console.log(data);
+  // } else {
+  //   const { data } = useGetCovidDataCountry(country);
+  //   console.log(data);
+  // }
+
+  const { data } = useGetCovidData();
 
   return (
     <>

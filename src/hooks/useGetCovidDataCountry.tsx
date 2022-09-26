@@ -1,3 +1,4 @@
+import { FC } from "react";
 import useSWR from "swr";
 
 import { CovidData } from "../components/type/CovidData";
@@ -6,7 +7,7 @@ type Props = {
   country: string;
 };
 
-export const useGetCovidDataCountry = (Props) => {
+export const useGetCovidDataCountry: FC<Props> = (Props) => {
   const { country } = Props;
 
   const covidDataApi = "https://covid19.mathdro.id/api/";
