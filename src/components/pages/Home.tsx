@@ -1,11 +1,13 @@
 import { FC, memo, Suspense } from "react";
 import { Typography } from "@material-ui/core";
 
+import { SwitchCountry } from "../molecules/SwitchCountry";
+
 const ResultCountsComponent = () => {
   return (
     <>
       <p>test</p>
-      <p>test</p>
+      <SwitchCountry />
     </>
   );
 };
