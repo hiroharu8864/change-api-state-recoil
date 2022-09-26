@@ -17,7 +17,7 @@ export const SwitchCountry: FC = memo(() => {
   const classes = useStyles();
   const countries = useCountryList();
   const [country, setCountry] = useRecoilState(countryAtom);
-  console.log(country);
+  // console.log(country);
 
   return (
     <>
