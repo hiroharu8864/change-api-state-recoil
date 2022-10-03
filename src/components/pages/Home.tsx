@@ -9,17 +9,22 @@ import { countryAtom } from "../../store/countryAtom";
 
 const ResultCountsComponent = () => {
   /** Recoilデータ有無で処理を分ける */
+  /**
+   *  カスタムフックに引数渡している
+   *  この場合、以下のエラーメッセージが発生する。
+   *  React Hook "useXXXX" is called conditionally,
+   *  React Hooks must be called in the exact same order
+   *  in every component render.
+   */
   const [country, setCountry] = useRecoilState(countryAtom);
 
   if (country === "") {
     const { data } = useGetCovidData();
-    console.log(data + "Data");
+    console.log(data);
   } else {
-    const { data } = useGetCovidDataCountry();
-    console.log(data + "DataCountry");
+    const { data } = useGetCovidDataCountry(country);
+    console.log(data);
   }
-
-  // const { data } = useGetCovidData();
 
   return (
     <>
