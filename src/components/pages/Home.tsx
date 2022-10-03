@@ -8,18 +8,18 @@ import { useGetCovidDataCountry } from "../../hooks/useGetCovidDataCountry";
 import { countryAtom } from "../../store/countryAtom";
 
 const ResultCountsComponent = () => {
-  const [country, setCountry] = useRecoilState(countryAtom);
-  console.log(country);
   /** Recoilデータ有無で処理を分ける */
-  // if (country === "") {
-  //   const { data } = useGetCovidData();
-  //   console.log(data);
-  // } else {
-  //   const { data } = useGetCovidDataCountry(country);
-  //   console.log(data);
-  // }
+  const [country, setCountry] = useRecoilState(countryAtom);
 
-  const { data } = useGetCovidData();
+  if (country === "") {
+    const { data } = useGetCovidData();
+    console.log(data + "Data");
+  } else {
+    const { data } = useGetCovidDataCountry();
+    console.log(data + "DataCountry");
+  }
+
+  // const { data } = useGetCovidData();
 
   return (
     <>
